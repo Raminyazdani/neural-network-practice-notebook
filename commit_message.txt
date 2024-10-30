@@ -1,0 +1,13 @@
+Ramin Yazdani | Neural Network MNIST Classifier | main | WIP(init): Initial commit: Create basic README
+
+Created minimal README.md with project title and placeholder description.
+This establishes the repository with basic project overview and sets the foundation
+for future development. The README provides initial context about the neural network
+implementation goals before any code is written.
+
+What was added:
+- README.md with project title
+- Placeholder description mentioning from-scratch neural network implementation
+- Basic project overview structure
+
+Next steps will add version control configuration and dependencies.

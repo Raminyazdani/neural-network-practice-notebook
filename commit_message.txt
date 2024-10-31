@@ -1,13 +1,16 @@
-Ramin Yazdani | Neural Network MNIST Classifier | main | WIP(init): Initial commit: Create basic README
+Ramin Yazdani | Neural Network MNIST Classifier | main | WIP(config): Add .gitignore for Python/Jupyter projects
 
-Created minimal README.md with project title and placeholder description.
-This establishes the repository with basic project overview and sets the foundation
-for future development. The README provides initial context about the neural network
-implementation goals before any code is written.
+Added comprehensive .gitignore file with Python and Jupyter Notebook patterns.
+This prevents committing build artifacts, cache files, virtual environments, and
+IDE-specific files that should remain local.
 
 What was added:
-- README.md with project title
-- Placeholder description mentioning from-scratch neural network implementation
-- Basic project overview structure
+- .gitignore with patterns for:
+  - Python bytecode (__pycache__/, *.pyc)
+  - Jupyter checkpoints (.ipynb_checkpoints/)
+  - Virtual environments (venv/, env/)
+  - IDE files (.vscode/, .idea/)
+  - Environment variables (.env)
 
-Next steps will add version control configuration and dependencies.
+This is standard practice immediately after creating a repository to avoid
+accidentally committing unwanted files.

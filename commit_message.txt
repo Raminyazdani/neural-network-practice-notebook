@@ -1,16 +1,14 @@
-Ramin Yazdani | Neural Network MNIST Classifier | main | WIP(config): Add .gitignore for Python/Jupyter projects
+Ramin Yazdani | Neural Network MNIST Classifier | main | WIP(deps): Add requirements.txt with project dependencies
 
-Added comprehensive .gitignore file with Python and Jupyter Notebook patterns.
-This prevents committing build artifacts, cache files, virtual environments, and
-IDE-specific files that should remain local.
+Created requirements.txt defining all project dependencies with version constraints.
+This ensures reproducibility and makes it clear what packages are needed before
+writing any code that imports these libraries.
 
-What was added:
-- .gitignore with patterns for:
-  - Python bytecode (__pycache__/, *.pyc)
-  - Jupyter checkpoints (.ipynb_checkpoints/)
-  - Virtual environments (venv/, env/)
-  - IDE files (.vscode/, .idea/)
-  - Environment variables (.env)
+Dependencies added:
+- numpy>=1.21.0 - Core numerical operations and vectorized math
+- scikit-learn>=1.0.0 - Dataset loading (fetch_openml for MNIST)
+- matplotlib>=3.3.0 - Visualization capabilities
+- jupyter>=1.0.0 - Interactive notebook environment
 
-This is standard practice immediately after creating a repository to avoid
-accidentally committing unwanted files.
+These are the minimal dependencies needed for a from-scratch neural network
+implementation using NumPy with MNIST data loading from scikit-learn.

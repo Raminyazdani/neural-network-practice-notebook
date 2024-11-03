@@ -1,14 +1,16 @@
-Ramin Yazdani | Neural Network MNIST Classifier | main | WIP(deps): Add requirements.txt with project dependencies
+Ramin Yazdani | Neural Network MNIST Classifier | main | WIP(data): Add MNIST data loading with notebook structure
 
-Created requirements.txt defining all project dependencies with version constraints.
-This ensures reproducibility and makes it clear what packages are needed before
-writing any code that imports these libraries.
+Created initial mnist_classifier.ipynb notebook with MNIST data loading infrastructure.
+This establishes the foundation of the ML pipeline by implementing data acquisition
+and basic structure setup.
 
-Dependencies added:
-- numpy>=1.21.0 - Core numerical operations and vectorized math
-- scikit-learn>=1.0.0 - Dataset loading (fetch_openml for MNIST)
-- matplotlib>=3.3.0 - Visualization capabilities
-- jupyter>=1.0.0 - Interactive notebook environment
+What was added:
+- mnist_classifier.ipynb notebook file
+- Imports: numpy, sklearn.datasets.fetch_openml, train_test_split, OneHotEncoder
+- Data loading using fetch_openml('mnist_784')
+- Markdown documentation for data loading section
+- Basic notebook structure with cells
 
-These are the minimal dependencies needed for a from-scratch neural network
-implementation using NumPy with MNIST data loading from scikit-learn.
+Rationale: Start with the data pipeline first - verify that data can be loaded
+and is in the right format before implementing any model logic. The data loading
+is the foundation of any machine learning project.

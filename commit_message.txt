@@ -1,16 +1,17 @@
-Ramin Yazdani | Neural Network MNIST Classifier | main | WIP(preprocessing): Add data preprocessing: normalization and train/test split
+Ramin Yazdani | Neural Network MNIST Classifier | main | WIP(model): Implement neural network class with initialization and ReLU
 
-Completed the data preprocessing pipeline with normalization and train/test split.
-Normalization scales pixel values to [0, 1] range which is critical for neural
-network training convergence. Train/test split enables proper model evaluation.
+Started building the TwoLayerNN class with proper weight initialization and ReLU
+activation function. This establishes the neural network architecture foundation
+before implementing the full forward pass.
 
 What was added:
-- Pixel normalization: [0, 255] → [0, 1] by dividing by 255.0
-- Train/test split using sklearn's train_test_split
-- Split ratio: 80% training (56,000 samples), 20% test (14,000 samples)
-- random_state=42 for reproducibility
-- Data shape verification prints
+- TwoLayerNN class with __init__ method:
+  - Xavier/Glorot initialization for weights (prevents vanishing/exploding gradients)
+  - Zero initialization for biases
+  - Architecture: 784 inputs → 64 hidden units → 10 outputs
+- ReLU activation: relu(Z) = max(0, Z)
+- ReLU derivative: relu_derivative(Z) = 1 if Z > 0 else 0
 
-Rationale: Normalization prevents gradient explosion and ensures stable training.
-The train/test split is standard ML practice for unbiased model evaluation.
-All data preprocessing is now complete before model implementation.
+Rationale: Build incrementally by starting with initialization and the first
+activation function. ReLU is used in the hidden layer for non-linearity while
+being computationally efficient and avoiding vanishing gradient issues.

@@ -1,17 +1,18 @@
-Ramin Yazdani | Neural Network MNIST Classifier | main | WIP(model): Implement neural network class with initialization and ReLU
+Ramin Yazdani | Neural Network MNIST Classifier | main | WIP(model): Add softmax activation and forward propagation
 
-Started building the TwoLayerNN class with proper weight initialization and ReLU
-activation function. This establishes the neural network architecture foundation
-before implementing the full forward pass.
+Completed the forward propagation implementation by adding softmax activation
+and the full forward pass through both layers of the network. This enables the
+network to make predictions.
 
 What was added:
-- TwoLayerNN class with __init__ method:
-  - Xavier/Glorot initialization for weights (prevents vanishing/exploding gradients)
-  - Zero initialization for biases
-  - Architecture: 784 inputs → 64 hidden units → 10 outputs
-- ReLU activation: relu(Z) = max(0, Z)
-- ReLU derivative: relu_derivative(Z) = 1 if Z > 0 else 0
+- Softmax activation implementation:
+  - Numerically stable version with exp shift to prevent overflow
+  - Converts logits to probability distribution over 10 classes
+- Forward propagation method:
+  - Hidden layer: Z1 = X·W1 + b1, A1 = ReLU(Z1)
+  - Output layer: Z2 = A1·W2 + b2, A2 = softmax(Z2)
+  - Returns intermediate values (Z1, A1, Z2, A2) needed for backpropagation
 
-Rationale: Build incrementally by starting with initialization and the first
-activation function. ReLU is used in the hidden layer for non-linearity while
-being computationally efficient and avoiding vanishing gradient issues.
+Rationale: Softmax is the standard activation for multi-class classification.
+Forward propagation computes predictions and caches intermediate values needed
+for efficient backpropagation gradient computation.

@@ -1,15 +1,16 @@
-Ramin Yazdani | Neural Network MNIST Classifier | main | WIP(preprocessing): Implement one-hot encoding for labels
+Ramin Yazdani | Neural Network MNIST Classifier | main | WIP(preprocessing): Add data preprocessing: normalization and train/test split
 
-Extended the notebook with one-hot encoding functionality to prepare labels for
-multi-class classification. The neural network output layer with softmax activation
-requires one-hot encoded labels for proper cross-entropy loss computation.
+Completed the data preprocessing pipeline with normalization and train/test split.
+Normalization scales pixel values to [0, 1] range which is critical for neural
+network training convergence. Train/test split enables proper model evaluation.
 
 What was added:
-- One-hot encoding implementation using sklearn's OneHotEncoder
-- Converts integer labels (0-9) to binary vectors (10 classes)
-- Configuration: sparse_output=False for dense numpy arrays
-- Updated README with preprocessing information
+- Pixel normalization: [0, 255] → [0, 1] by dividing by 255.0
+- Train/test split using sklearn's train_test_split
+- Split ratio: 80% training (56,000 samples), 20% test (14,000 samples)
+- random_state=42 for reproducibility
+- Data shape verification prints
 
-Rationale: This is a discrete preprocessing step that prepares labels in the format
-needed by the softmax + cross-entropy loss function. Separated from other preprocessing
-to keep commits focused and logical.
+Rationale: Normalization prevents gradient explosion and ensures stable training.
+The train/test split is standard ML practice for unbiased model evaluation.
+All data preprocessing is now complete before model implementation.

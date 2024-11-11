@@ -1,16 +1,17 @@
-Ramin Yazdani | Neural Network MNIST Classifier | main | WIP(model): Implement cross-entropy loss function
+Ramin Yazdani | Neural Network MNIST Classifier | main | WIP(model): Implement backpropagation for gradient computation
 
-Added cross-entropy loss function to measure prediction error and track training
-progress. This loss function is the standard choice for multi-class classification
-with softmax output.
+Implemented backpropagation algorithm to compute gradients of the loss with respect
+to all weights and biases. This is the core mechanism that enables neural network
+learning through gradient descent.
 
 What was added:
-- compute_loss(y_true, y_pred) method
-- Cross-entropy formula: -mean(sum(y_true * log(y_pred + epsilon)))
-- Numerical stability: epsilon=1e-10 prevents log(0) errors
-- Returns scalar loss value for monitoring
+- backward(X, y) method with complete gradient computation:
+  - Output layer gradient: dZ2 = A2 - y (softmax + cross-entropy derivative)
+  - Output layer weight gradients: dW2 = A1.T · dZ2 / m, db2 = sum(dZ2) / m
+  - Hidden layer gradient: dZ1 = (dZ2 · W2.T) * relu_derivative(Z1)
+  - Hidden layer weight gradients: dW1 = X.T · dZ1 / m, db1 = sum(dZ1) / m
+- Returns (dW1, db1, dW2, db2) for weight updates
 
-Rationale: The loss function quantifies how wrong the model's predictions are.
-Cross-entropy is optimal for softmax outputs as it measures the difference between
-predicted probability distribution and true distribution. Will be used to monitor
-training convergence and as the objective function for gradient descent.
+Rationale: Backpropagation efficiently computes all gradients needed for gradient
+descent using the chain rule. The implementation uses vectorized operations for
+efficiency and leverages cached forward pass values.

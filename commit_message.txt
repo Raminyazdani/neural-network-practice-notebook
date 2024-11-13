@@ -1,17 +1,18 @@
-Ramin Yazdani | Neural Network MNIST Classifier | main | WIP(model): Implement backpropagation for gradient computation
+Ramin Yazdani | Neural Network MNIST Classifier | main | WIP(training): Implement training loop and prediction functionality
 
-Implemented backpropagation algorithm to compute gradients of the loss with respect
-to all weights and biases. This is the core mechanism that enables neural network
-learning through gradient descent.
+Implemented the training loop and prediction method to complete the neural network
+functionality. The model can now be trained on data and make predictions.
 
 What was added:
-- backward(X, y) method with complete gradient computation:
-  - Output layer gradient: dZ2 = A2 - y (softmax + cross-entropy derivative)
-  - Output layer weight gradients: dW2 = A1.T · dZ2 / m, db2 = sum(dZ2) / m
-  - Hidden layer gradient: dZ1 = (dZ2 · W2.T) * relu_derivative(Z1)
-  - Hidden layer weight gradients: dW1 = X.T · dZ1 / m, db1 = sum(dZ1) / m
-- Returns (dW1, db1, dW2, db2) for weight updates
+- train(X, y, epochs, learning_rate) method:
+  - Loops over epochs performing forward pass, loss computation, and backpropagation
+  - Updates weights using gradient descent: W -= learning_rate * dW
+  - Prints loss every 10 epochs for progress monitoring
+- predict(X) method:
+  - Runs forward propagation
+  - Returns predicted class labels (argmax of softmax probabilities)
+- Training and evaluation cells in notebook
 
-Rationale: Backpropagation efficiently computes all gradients needed for gradient
-descent using the chain rule. The implementation uses vectorized operations for
-efficiency and leverages cached forward pass values.
+Known issue: Learning rate set to 0.05 which is too low. This will cause slow
+convergence and suboptimal accuracy (~50% instead of expected 90%). Will be
+fixed in next commit after testing reveals the problem.

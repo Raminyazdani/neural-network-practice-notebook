@@ -1,22 +1,17 @@
-Ramin Yazdani | Neural Network MNIST Classifier | main | feat(fix): Fix learning rate: 0.05 → 0.5 for proper convergence
+Ramin Yazdani | Neural Network MNIST Classifier | main | WIP(eval): Add model evaluation code
 
-Fixed learning rate bug discovered during initial testing. The previous value of
-0.05 was too conservative, causing very slow convergence and poor accuracy.
-Increasing to 0.5 achieves the expected 90% accuracy.
+Added evaluation code to compute and display test accuracy after training.
+This enables measuring model performance on unseen data.
 
-What was changed:
-- Learning rate: 0.05 → 0.5 (10× increase)
+What was added:
+- Prediction computation on test set after training
+- Accuracy calculation: mean(predictions == true_labels)
+- Formatted accuracy percentage output
 
-Problem observed:
-- With LR=0.05: Loss barely decreased, stuck around 1.5-2.0 after 100 epochs
-- Test accuracy only ~50% (far below expected 90%)
-- Training was underutilizing gradient information
+Bug introduced: Used wrong variable name `X_testing` instead of `X_test` in the
+prediction line. This will cause a NameError when the evaluation cell is run
+because the preprocessing step created `X_test`, not `X_testing`. This typo
+will be caught immediately when running the notebook and fixed in the next commit.
 
-After fix:
-- Loss decreases rapidly to 0.3-0.4
-- Test accuracy ~90% as expected for this architecture
-- Proper convergence in 100 epochs
-
-How discovered: Ran training and observed poor accuracy. Compared to literature
-values for similar architectures (typical LR range: 0.1-1.0). Re-ran with LR=0.5
-and achieved expected performance.
+This demonstrates a common mistake when switching between naming conventions
+(test vs testing).

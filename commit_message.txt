@@ -1,17 +1,18 @@
-Ramin Yazdani | Neural Network MNIST Classifier | main | WIP(eval): Add model evaluation code
+Ramin Yazdani | Neural Network MNIST Classifier | main | feat(fix): Fix evaluation: correct variable name X_test
 
-Added evaluation code to compute and display test accuracy after training.
-This enables measuring model performance on unseen data.
+Fixed variable name typo in evaluation code discovered when running the notebook.
+The variable is named `X_test` (from preprocessing), not `X_testing`.
 
-What was added:
-- Prediction computation on test set after training
-- Accuracy calculation: mean(predictions == true_labels)
-- Formatted accuracy percentage output
+What was changed:
+- predictions = model.predict(X_testing) → predictions = model.predict(X_test)
 
-Bug introduced: Used wrong variable name `X_testing` instead of `X_test` in the
-prediction line. This will cause a NameError when the evaluation cell is run
-because the preprocessing step created `X_test`, not `X_testing`. This typo
-will be caught immediately when running the notebook and fixed in the next commit.
+Problem: Running the evaluation cell threw NameError: name 'X_testing' is not defined
 
-This demonstrates a common mistake when switching between naming conventions
-(test vs testing).
+How discovered: Ran notebook cells sequentially, got immediate error on evaluation
+cell. Checked preprocessing cell to see actual variable names, found the variable
+is `X_test`.
+
+After fix: Evaluation runs successfully and displays ~90% test accuracy as expected.
+
+This is a typical typo bug that's caught immediately during testing. Shows the
+importance of running code incrementally to catch errors early.

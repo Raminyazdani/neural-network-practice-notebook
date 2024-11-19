@@ -1,18 +1,25 @@
-Ramin Yazdani | Neural Network MNIST Classifier | main | feat(fix): Fix evaluation: correct variable name X_test
+Ramin Yazdani | Neural Network MNIST Classifier | main | feat(docs): Polish README with comprehensive documentation
 
-Fixed variable name typo in evaluation code discovered when running the notebook.
-The variable is named `X_test` (from preprocessing), not `X_testing`.
+Expanded README.md to portfolio-grade documentation with comprehensive sections
+covering all aspects of the project. This transforms the basic README into
+professional documentation suitable for portfolio presentation.
 
-What was changed:
-- predictions = model.predict(X_testing) → predictions = model.predict(X_test)
+What was updated:
+- Added badges (Python, NumPy, License)
+- Comprehensive overview highlighting 90% accuracy achievement
+- Detailed "Problem & Approach" section
+- Complete tech stack description
+- Repository structure diagram
+- Comprehensive setup & installation instructions with prerequisites
+- Multiple run options (Jupyter Notebook, JupyterLab)
+- Data documentation explaining MNIST dataset and automatic download
+- Outputs section with sample training output
+- Implementation details (architecture, hyperparameters, methods)
+- Reproducibility section
+- Extended troubleshooting section (5 common issues with solutions)
+- Key features section
+- Future enhancements ideas
+- License and acknowledgments
 
-Problem: Running the evaluation cell threw NameError: name 'X_testing' is not defined
-
-How discovered: Ran notebook cells sequentially, got immediate error on evaluation
-cell. Checked preprocessing cell to see actual variable names, found the variable
-is `X_test`.
-
-After fix: Evaluation runs successfully and displays ~90% test accuracy as expected.
-
-This is a typical typo bug that's caught immediately during testing. Shows the
-importance of running code incrementally to catch errors early.
+Result: README increased from 74 lines to 200+ lines. Now provides complete
+information for anyone wanting to understand, run, or build upon this project.

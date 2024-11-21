@@ -1,0 +1,17 @@
+TYPE	FILE	LOCATOR	BEFORE_SNIPPET	PROPOSED_CHANGE	RATIONALE	STATUS
+TRACE	README.md	line 1	# NNTI Exercise 4	# Neural Network from Scratch: MNIST Digit Classifier	Remove course code and assignment framing	APPLIED
+TRACE	README.md	line 3	**Project Type:** University Assignment/Task	Remove this line entirely	Remove assignment classification	APPLIED
+TRACE	README.md	line 8	This is Exercise 4 for the Neural Networks and Their Implementation (NNTI) course. The exercise covers practical implementation of neural network concepts, training procedures, and analysis.	Professional description explaining what the project does and demonstrates	Remove course reference and assignment framing	APPLIED
+TRACE	README.md	line 21-22	Submission_8_-_7072982_Syed_Rumman_Ali/ structure reference	Update folder structure to reflect actual repo structure (no submission folder)	Remove submission folder reference	APPLIED
+TRACE	README.md	line 42	cd Submission_8_-_7072982_Syed_Rumman_Ali	Remove this step (no subfolder navigation needed)	Remove submission folder reference	APPLIED
+TRACE	README.md	line 55-59	Exercise configurations/results language	Replace with more professional data inputs/outputs description	Remove assignment language	APPLIED
+TRACE	README.md	line 67	Self-contained exercise implementation	Replace with professional project description	Remove assignment language	APPLIED
+RENAME	Exercise4.ipynb	filename	Exercise4.ipynb	mnist_classifier.ipynb	Rename to professional, descriptive name	APPLIED
+TRACE	Exercise4.ipynb	cell[0] markdown	# Exercise 4	# MNIST Digit Classifier: Two-Layer Neural Network	Remove assignment framing, add professional title	APPLIED
+TRACE	Exercise4.ipynb	cell[0] markdown	In this exercise, you will implement...	This notebook demonstrates a from-scratch implementation of a two-layer neural network using vectorized NumPy operations for MNIST digit classification.	Remove assignment language, use professional description	APPLIED
+TRACE	Exercise4.ipynb	cell[2] markdown	You need to implement a two-layer neural network (one hidden layer) using NumPy. Fill in all the required cells below. Only use numpy functions...	Implementation Notes: This two-layer neural network (one hidden layer) uses only NumPy operations...	Remove assignment instructions, convert to documentation	APPLIED
+TRACE	Exercise4.ipynb	cell[2] markdown	Contains point values: (0.5 point), (1.5 points), etc.	Remove all point value references	Remove grading rubric	APPLIED
+TRACE	Exercise4.ipynb	cell[4] markdown	The following code evaluates the performance of your network on X_test. You can expect an accuracy of around 90%.	Evaluation: The network achieves approximately 90% accuracy on the MNIST test set.	Remove instructional tone	APPLIED
+STRUCTURE	/	missing .gitignore	N/A	Create .gitignore with Python/Jupyter patterns	Add standard .gitignore for Python projects	APPLIED
+DOC	README.md	entire file	Current README structure	Rewrite to portfolio-grade format with: Title, Description, Problem & Approach, Tech Stack, Setup, Usage, Data, Outputs, Results, Troubleshooting	Make README portfolio-ready and comprehensive	APPLIED
+DEPENDENCY	requirements.txt	line 1	torch>=2.0.0	Remove torch, add scikit-learn>=1.0.0	Fix incorrect dependencies - torch not used, scikit-learn required for fetch_openml	APPLIED

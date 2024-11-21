@@ -1,0 +1,16 @@
+FILE	LOCATOR	BEFORE_SNIPPET	AFTER_SNIPPET	NOTES
+/	filename	N/A	.gitignore created	Created standard Python/Jupyter .gitignore file with patterns for __pycache__, .ipynb_checkpoints, venv, IDE files, etc.
+Exercise4.ipynb	filename	Exercise4.ipynb	mnist_classifier.ipynb	Renamed file to professional, descriptive name without assignment framing
+README.md	line 1	# NNTI Exercise 4	# Neural Network from Scratch: MNIST Digit Classifier	Updated title to professional format, removed course code
+README.md	line 3	**Project Type:** University Assignment/Task	Removed entirely	Removed assignment classification
+README.md	line 8	This is Exercise 4 for the Neural Networks and Their Implementation (NNTI) course. The exercise covers...	This project demonstrates the fundamental building blocks of neural networks by implementing a two-layer digit classifier from scratch using only NumPy...	Replaced course description with professional project description
+README.md	line 21-22	Submission_8_-_7072982_Syed_Rumman_Ali/ folder structure	neural-network-practice-notebook/ actual repo structure	Updated folder structure to reflect actual repository layout
+README.md	line 42	cd Submission_8_-_7072982_Syed_Rumman_Ali	Removed (no subfolder navigation)	Removed submission folder navigation step
+README.md	entire file	Assignment-style README	Portfolio-grade README with comprehensive sections	Complete rewrite: added badges, overview, problem/approach, detailed setup, data documentation, outputs, reproducibility, troubleshooting, 200+ lines
+mnist_classifier.ipynb	cell[0] markdown	# Exercise 4\nIn this exercise, you will implement...	# MNIST Digit Classifier: Two-Layer Neural Network\n\nThis notebook demonstrates a from-scratch implementation...	Updated title and description to remove assignment framing
+mnist_classifier.ipynb	cell[1] markdown	The following cell has code to load... You will be working with the MNIST dataset...	## Data Loading and Preprocessing\n\nThe following cell loads and preprocesses the MNIST dataset...	Removed instructional tone, added professional section heading and detailed description
+mnist_classifier.ipynb	cell[2] markdown	You need to implement a two-layer neural network... Fill in all the required cells... (0.5 point), (1.5 points), etc.	## Neural Network Implementation\n\n**Implementation Notes:**... **Key Components:**...	Removed assignment instructions and point values, converted to professional documentation format
+mnist_classifier.ipynb	cell[4] markdown	The following code evaluates the performance of your network... You can expect an accuracy of around 90%.	## Model Training and Evaluation\n\nThe network is trained for 100 epochs... achieving approximately **90% accuracy**...	Removed instructional tone, added professional formatting and context
+requirements.txt	line 1	torch>=2.0.0	Removed (replaced with scikit-learn)	Fixed dependency: torch was listed but not used; scikit-learn is actually required for fetch_openml
+requirements.txt	entire file	torch>=2.0.0\nnumpy>=1.21.0\nmatplotlib>=3.3.0\njupyter>=1.0.0	numpy>=1.21.0\nscikit-learn>=1.0.0\nmatplotlib>=3.3.0\njupyter>=1.0.0	Corrected dependencies to match actual imports used in notebook
+

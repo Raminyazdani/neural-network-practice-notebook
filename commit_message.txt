@@ -1,25 +1,21 @@
-Ramin Yazdani | Neural Network MNIST Classifier | main | feat(docs): Polish README with comprehensive documentation
+Ramin Yazdani | Neural Network MNIST Classifier | main | feat(docs): Improve notebook markdown cells with detailed descriptions
 
-Expanded README.md to portfolio-grade documentation with comprehensive sections
-covering all aspects of the project. This transforms the basic README into
-professional documentation suitable for portfolio presentation.
+Enhanced markdown cells in mnist_classifier.ipynb to provide clear, professional
+documentation within the notebook itself. This makes the notebook more educational
+and easier to understand.
 
-What was updated:
-- Added badges (Python, NumPy, License)
-- Comprehensive overview highlighting 90% accuracy achievement
-- Detailed "Problem & Approach" section
-- Complete tech stack description
-- Repository structure diagram
-- Comprehensive setup & installation instructions with prerequisites
-- Multiple run options (Jupyter Notebook, JupyterLab)
-- Data documentation explaining MNIST dataset and automatic download
-- Outputs section with sample training output
-- Implementation details (architecture, hyperparameters, methods)
-- Reproducibility section
-- Extended troubleshooting section (5 common issues with solutions)
-- Key features section
-- Future enhancements ideas
-- License and acknowledgments
+What was updated (4 markdown cells):
+- Cell 0: Updated title to "MNIST Digit Classifier: Two-Layer Neural Network"
+  - Added clear project description emphasizing from-scratch implementation
+  - Professional tone replacing any instructional language
+- Cell 1: Added "## Data Loading and Preprocessing" section header
+  - Enhanced description of data loading and preprocessing steps
+- Cell 3: Added "## Neural Network Implementation" section header
+  - Implementation notes explaining architecture decisions
+  - Listed key components (activations, forward/backward propagation)
+- Cell 5: Added "## Model Training and Evaluation" section header
+  - Described training process and expected accuracy
+  - Professional formatting with clear structure
 
-Result: README increased from 74 lines to 200+ lines. Now provides complete
-information for anyone wanting to understand, run, or build upon this project.
+Result: In-notebook documentation now matches the quality of the README, making
+the notebook both educational and professional.

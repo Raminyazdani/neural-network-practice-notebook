@@ -562,17 +562,163 @@ The repository is now portfolio-ready:
 
 ---
 
-## Final Self-Audit Checklist
+## Phase 6: Third Step-Expansion Run
+
+**Start Time:** 2025-12-27T18:14:00.000Z
+
+### 6.1 Phase 0 Re-Audit Results
+
+**Deliverables Check:**
+- ✅ project_identity.md: Complete and aligned with README
+- ✅ README.md: Portfolio-grade, comprehensive (200+ lines)
+- ✅ report.md: Complete with second run details
+- ✅ suggestion.txt: All 16 entries have STATUS=APPLIED
+- ✅ suggestions_done.txt: Complete with 14 detailed change records
+
+**Verification:**
+- ✅ Dependencies installed successfully (NumPy 2.4.0, scikit-learn 1.8.0)
+- ✅ All imports tested and working
+- ✅ Project is runnable
+
+**Historian State from Run 2:**
+- ✅ N_old = 11 steps (history/steps/)
+- ✅ No snapshot includes history/ or .git/ (verified with find)
+- ✅ step_11 matches final working tree exactly
+- ✅ Oops→hotfix #1 verified: step_08 has LR=0.05, step_09 has LR=0.5
+
+### 6.2 Third Expansion Work
+
+**Step Count Calculation:**
+- N_old = 11 (from Run 2)
+- N_target = ceil(11 × 1.5) = 17 steps (minimum required)
+- N_achieved = 17 steps
+- Multiplier = 17/11 = **1.55×** ✅
+
+**Preservation:**
+- Backed up Run 1 history to `history/_run1_7steps/`
+- Backed up Run 2 history to `history/_run2_11steps/`
+- Preserved all previous github_steps.md and step snapshots
+
+**Expansion Strategy Applied:**
+
+1. **Further Splitting Strategy:**
+   - Run2 step 01 (Initial scaffold) → Run3 step 01 (just README, more minimal)
+   - Run2 step 02 (.gitignore) → Run3 steps 02-03 (split: .gitignore + requirements.txt separately)
+   - Run2 step 04 (Preprocessing) → Run3 steps 05-06 (split: one-hot encode + train/test split)
+   - Run2 step 05 (Architecture) → Run3 steps 07-08 (split: init+relu + softmax+forward)
+   - Run2 step 10 (Documentation) → Run3 steps 15-16 (split: README + notebook markdown)
+
+2. **Oops→Hotfix #2 Strategy (NEW):**
+   - Inserted between Run2 steps 09 and 10
+   - **Step 13 (oops):** Used wrong variable name `X_testing` instead of `X_test` in evaluation
+   - **Step 14 (hotfix):** Fixed variable name to `X_test`
+   - This is a very realistic bug: typos in variable names are extremely common
+   - Bug causes: `NameError: name 'X_testing' is not defined`
+   - Fix is immediate and obvious once error is seen
+
+3. **Direct Mapping (kept as single commits):**
+   - Run2 step 03 → Run3 step 04 (data loading)
+   - Run2 step 06 → Run3 step 09 (loss function)
+   - Run2 step 07 → Run3 step 10 (backpropagation)
+   - Run2 step 08 → Run3 step 11 (training with LR=0.05 bug)
+   - Run2 step 09 → Run3 step 12 (fix LR to 0.5)
+   - Run2 step 11 → Run3 step 17 (final portfolio state)
+
+### 6.3 New Historian Structure (Run 3)
+
+**Created:**
+- `history/github_steps.md` - Expanded 17-step narrative with:
+  - "History expansion note" section documenting all three runs
+  - Run 1: 7 steps
+  - Run 2: 11 steps (1.57× multiplier)
+  - Run 3: 17 steps (1.55× multiplier)
+  - Mapping from Run 2 steps to Run 3 step ranges
+  - Two detailed oops→hotfix descriptions:
+    - Oops→Hotfix #1: Learning rate bug (steps 11-12)
+    - Oops→Hotfix #2: Variable name typo (steps 13-14)
+- `history/steps/step_01` through `step_17` - Full snapshots
+
+**Step Progression:**
+1. step_01: Initial README only
+2. step_02: Add .gitignore
+3. step_03: Add requirements.txt
+4. step_04: Data loading infrastructure
+5. step_05: One-hot encoding
+6. step_06: Train/test split and normalization
+7. step_07: Network architecture part 1 (init + relu)
+8. step_08: Network architecture part 2 (softmax + forward)
+9. step_09: Loss function
+10. step_10: Backpropagation
+11. step_11: Training loop (with LR=0.05 bug) ⚠️
+12. step_12: Fix learning rate (LR=0.5) ✓
+13. step_13: Add evaluation code (with X_testing bug) ⚠️
+14. step_14: Fix variable name (X_test) ✓
+15. step_15: README documentation polish
+16. step_16: Notebook markdown improvements
+17. step_17: Final portfolio state with project_identity.md [CURRENT STATE]
+
+### 6.4 Verification Results
+
+**Snapshot Count:** ✅ 17 steps created (step_01 through step_17)
+
+**Exclusions:** ✅ Verified
+- No snapshot includes `.git/` (checked with find)
+- No snapshot includes `history/` (checked with find)
+
+**Final Snapshot Match:** ✅ Verified
+- Ran rsync diff between step_17 and current repository
+- Result: Zero differences (excluding .git/, history/, deliverables)
+- step_17 matches final working tree byte-for-byte
+
+**Bug Implementations:** ✅ Verified
+- Oops→Hotfix #1:
+  - step_11: learning_rate = 0.05 (verified)
+  - step_12: learning_rate = 0.5 (verified)
+- Oops→Hotfix #2:
+  - step_13: `predictions = model.predict(X_testing)` (verified)
+  - step_14: `predictions = model.predict(X_test)` (verified)
+
+**Sequential Numbering:** ✅ Verified
+- All steps numbered step_01, step_02, ..., step_17
+- No decimals, no alternate naming
+
+### 6.5 Summary of Third Run
+
+**Historian Expansion:**
+- Run 1: 7 steps
+- Run 2: 11 steps (+57%)
+- Run 3: 17 steps (+55%)
+- Total increase from Run 1: +143% (7 → 17 steps)
+
+**New Features in Run 3:**
+- Second oops→hotfix pair (steps 13-14) demonstrates variable name typo bug
+- More granular commit history (further splitting of large commits)
+- Three-level history tracking (_run1_7steps, _run2_11steps, current)
+- Enhanced github_steps.md documents all three expansion runs
+
+**Files Modified/Created:**
+- Created: history/_run1_7steps/ (backup of Run 1)
+- Created: history/_run2_11steps/ (backup of Run 2)
+- Replaced: history/github_steps.md (Run 3 expanded version)
+- Replaced: history/steps/step_01 through step_17 (17 new snapshots)
+
+**End Time:** 2025-12-27T18:30:00Z
+**Total Duration (Third Run):** ~16 minutes
+**Status:** ✅ COMPLETE
+
+---
+
+## Final Self-Audit Checklist (Updated for Run 3)
 
 - [x] project_identity.md complete and aligned with README
 - [x] README.md portfolio-grade and accurate
 - [x] suggestion.txt contains findings with final statuses (all STATUS=APPLIED)
 - [x] suggestions_done.txt contains all applied changes with before/after + locators
 - [x] Repo runs or blockers are documented with exact reproduction steps (imports verified)
-- [x] history/github_steps.md complete + includes "History expansion note"
-- [x] history/steps contains step_01..step_11 (sequential integers)
-- [x] N_new ≥ ceil(N_old * 1.5): 11 ≥ 11 ✓ (achieved 1.57× multiplier)
-- [x] step_11 matches final working tree exactly (excluding history/)
+- [x] history/github_steps.md complete + includes "History expansion note" (for all 3 runs)
+- [x] history/steps contains step_01..step_17 (sequential integers)
+- [x] N_new ≥ ceil(N_old * 1.5): 17 ≥ 17 ✓ (achieved 1.55× multiplier, N_old=11)
+- [x] step_17 matches final working tree exactly (excluding history/)
 - [x] No snapshot includes history/ or .git/
 - [x] No secrets added; no fabricated datasets
 

@@ -1,32 +1,13 @@
-# Neural Network from Scratch: MNIST Digit Classifier
+# Neural Network from Scratch
 
-A neural network implementation from scratch using NumPy for MNIST digit classification.
+A neural network implementation project for MNIST digit classification.
 
 ## Overview
 
-This project will implement a two-layer neural network to classify handwritten digits from the MNIST dataset, using only NumPy for the core implementation.
+This project will implement a two-layer neural network using NumPy to classify handwritten digits from the MNIST dataset.
 
-## Goals
+## Coming Soon
 
-- Implement forward and backward propagation from scratch
-- Use vectorized NumPy operations
-- Achieve competitive accuracy on MNIST
-- Educational demonstration of neural network fundamentals
-
-## Tech Stack
-
-- Python 3.x
-- NumPy
-- scikit-learn (for data loading)
-- Jupyter Notebook
-
-## Setup
-
-Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-## Status
-
-🚧 In Development
+- Dependencies and setup instructions
+- Implementation notebook
+- Documentation and usage guide
